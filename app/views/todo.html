@@ -1,7 +1,12 @@
 <div>
+    <form ng-submit="addNewItem()">
+        <input type="text" class="form-control" placeholder="Add ToDo item" ng-model="itemText" />
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
     <ul class="list-group">
-        <li ng-repeat="item in items" class="list-group-item">
+        <li ng-repeat="item in items" class="list-group-item item-{{item.state}}">
             {{item.text}}
+            <a href="" ng-click="completeItem(item)">x</a>
         </li>
     </ul>
 </div>
