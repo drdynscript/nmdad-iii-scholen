@@ -1,0 +1,29 @@
+{
+  "name": "nmdad-iii-schools",
+  "version": "0.0.0",
+  "description": "App waarin Gentse scholen weergegeven worden",
+  "keywords": [
+    "Gent",
+    "scholen",
+    "proDEV",
+    "MMP"
+  ],
+  "authors": [
+    "Arteveldehogeschool | Bachelor in de grafische en digitale media | Drdynscript"
+  ],
+  "license": "MIT",
+  "homepage": "localhost",
+  "dependencies": {
+    "jquery": "2.0.3",
+    "modernizr": "2.6.2",
+    "bootstrap": "3.0.1",
+    "lodash": "2.2.1",
+    "angular": "1.2.0-rc.3",
+    "angular-resource": "1.2.0-rc.3",
+    "angular-route": "1.2.0-rc.3",
+    "angular-cookies": "1.2.0-rc.3",
+    "angular-animate": "1.2.0-rc.3",
+    "font-awesome": "4.0.1",
+    "leaflet": "0.6.3"
+  }
+}
