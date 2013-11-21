@@ -21,4 +21,7 @@ angular.module('ddsApp', [
         $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.otherwise({redirectTo: '/'});
+    }])
+.run(['$rootScope', '$timeout', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, ScholenSrvc){
+        ScholenSrvc.loadData();
     }]);
