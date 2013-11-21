@@ -1,7 +1,22 @@
 <div class="row">
     <div class="col-xs-12">
+        <div class="btn-group btn-group-justified">
+            <a href="" ng-class="{'btn':true, 'btn-default':true, 'active': isList == true}" ng-click="changeIsList(true)"><i class="fa fa-list"></i> List</a>
+            <a href="" ng-class="{'btn':true, 'btn-default':true, 'active': isList == false}" ng-click="changeIsList(false)"><i class="fa fa-map-marker"></i> Map</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
         <select class="form-control" ng-model="form.basisschooltype" ng-options="bst.label for bst in basisschooltypes">
         </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well well-sm" id="info-message">
+            666 scholen
+        </div>
     </div>
 </div>
 <div class="row">

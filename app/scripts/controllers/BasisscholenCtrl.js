@@ -20,7 +20,11 @@
 
         if(ScholenSrvc.getDataBasisscholen() !== null){
             $scope.basisscholen = ScholenSrvc.getDataBasisscholen();
-            console.log($scope.basisscholen);
         }
+
+        $scope.isList = true;
+        $scope.changeIsList = function(isList){
+            $scope.isList = isList;
+        };
     }]);
 })();
