@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="list-group">
-            <a href="" ng-repeat="basisschool in basisscholen" class="list-group-item">
+            <a href="" ng-repeat="basisschool in basisscholen | filter:{'aanbod':form.basisschooltype.value}" class="list-group-item">
                 <h4 class="list-group-item-heading">{{basisschool.roepnaam}}</h4>
                 <p class="list-group-item-text">{{basisschool.aanbod}}</p>
             </a>
