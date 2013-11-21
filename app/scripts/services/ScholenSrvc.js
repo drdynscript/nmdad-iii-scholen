@@ -50,7 +50,14 @@
 
         return{
             loadData:function(){
-
+                $rootScope.$on('ddsApp.services.ScholenSrvc.resourceLoaded', function(){
+                    _numberOfResourcesLoadedViaAJAX++;
+                    if(_numberOfResourcesLoadedViaAJAX === _numberOfResourcesToLoadViaAJAX)
+                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourcesLoaded');
+                });
+                $rootScope.$on('ddsApp.services.ScholenSrvc.resourceError', function(){
+                    $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourcesError');
+                });
                 that.loadBasisscholen();
                 that.loadSecundairescholen();
             },
