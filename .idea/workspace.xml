@@ -4,7 +4,7 @@
     <list default="true" id="0726e165-3e25-402e-a538-e1acd8d92068" name="Default" comment="" />
     <ignored path="nmdad-iii-schools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384432921823" ignored="false" />
+    <file path="/index.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385021220469" ignored="false" />
     <file path="/app.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384432811184" ignored="false" />
     <file path="/main.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384424574897" ignored="false" />
     <file path="/todo.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384430987009" ignored="false" />
@@ -32,10 +32,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="24" selection-start="1443" selection-end="1443" vertical-scroll-proportion="-8.192307">
+            <state line="37" column="27" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.633574">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="todo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/todo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="80" selection-start="310" selection-end="328" vertical-scroll-proportion="-8.076923">
+            <state line="6" column="80" selection-start="310" selection-end="328" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,16 +80,16 @@
       <file leaf-file-name="ScholenSrvc.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="20" selection-start="530" selection-end="548" vertical-scroll-proportion="0.0">
+            <state line="16" column="5" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasisscholenCtrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BasisscholenCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="58" selection-start="279" selection-end="325" vertical-scroll-proportion="0.20253165">
+            <state line="21" column="0" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,7 +98,7 @@
       <file leaf-file-name="basisscholen.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/basisscholen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="-0.0">
+            <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,10 +138,10 @@
         <option value="$PROJECT_DIR$/app/views/todo.html" />
         <option value="$PROJECT_DIR$/app/styles/app.css" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js" />
         <option value="$PROJECT_DIR$/app/views/basisscholen.html" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -149,8 +149,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="1040" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -325,7 +325,7 @@
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -342,14 +342,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1040" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1737013" sideWeight="0.6713533" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2576687" sideWeight="0.6713533" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -490,7 +490,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/todo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="80" selection-start="310" selection-end="328" vertical-scroll-proportion="-8.076923">
+        <state line="6" column="80" selection-start="310" selection-end="328" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -509,20 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="24" selection-start="1443" selection-end="1443" vertical-scroll-proportion="-8.192307">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="20" selection-start="530" selection-end="548" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/basisscholen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="-0.0">
@@ -532,7 +518,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="58" selection-start="279" selection-end="325" vertical-scroll-proportion="0.20253165">
+        <state line="21" column="0" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="5" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="27" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.633574">
           <folding />
         </state>
       </provider>
