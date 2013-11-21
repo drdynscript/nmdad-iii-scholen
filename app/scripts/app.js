@@ -12,7 +12,8 @@ angular.module('ddsApp', [
     'ddsApp.directives'
 ])
 .config(['$routeProvider','$locationProvider', '$httpProvider',function($routeProvider, $locationProvider, $httpProvider){
-       $httpProvider.defaults.useXDomain = true;//Cross Domain Calls --> Ok Ready
+        $httpProvider.defaults.useXDomain = true;//Cross Domain Calls --> Ok Ready
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
         $routeProvider.when('/', {templateUrl:'views/main.html', controller:'ddsApp.controllers.MainCtrl'});
         $routeProvider.when('/todo', {templateUrl:'views/todo.html', controller:'ddsApp.controllers.ToDoCtrl'});

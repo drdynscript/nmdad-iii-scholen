@@ -17,23 +17,31 @@
         };
 
         $scope.$watch('form.basisschooltype', function(newValue, oldValue){
-            var filteredBasisscholen = $filter('filter')($scope.basisscholen, {'aanbod':$scope.form.basisschooltype.value});
+            if($scope.basisscholen !== null)
+            {
+                var filteredBasisscholen = $scope.basisscholen;
 
-            $('#info-message').html('<span class="badge pull-left">' + filteredBasisscholen.length + '</span>' + ' basisscholen');
+                if($scope.form.basisschooltype.value !== '')
+                    filteredBasisscholen = $filter('filter')($scope.basisscholen, {'aanbod':$scope.form.basisschooltype.value});
 
-            var lflPlaces = [];
-            angular.forEach(filteredBasisscholen, function(basisschool, key){
-                lflPlaces.push({
-                    lat:basisschool.lat,
-                    lng:basisschool.long,
-                    dsc:'<strong>' + basisschool.roepnaam + '</strong>'
+                $('#info-message').html('<span class="badge pull-left">' + filteredBasisscholen.length + '</span>' + ' basisscholen');
+
+                var lflPlaces = [];
+                angular.forEach(filteredBasisscholen, function(basisschool, key){
+                    lflPlaces.push({
+                        lat:basisschool.lat,
+                        lng:basisschool.long,
+                        dsc:'<strong>' + basisschool.roepnaam + '</strong>'
+                    });
                 });
-            });
-            $scope.lflplacesbasisscholen = lflPlaces;
+                $scope.lflplacesbasisscholen = lflPlaces;
+                $scope.lflrefresh = true;
+            }
         });
 
         $scope.basisscholen = null;
         $scope.lflplacesbasisscholen = null;
+        $scope.lflrefresh = null;
 
         if(ScholenSrvc.getDataBasisscholen() !== null){
             $scope.basisscholen = ScholenSrvc.getDataBasisscholen();
@@ -48,6 +56,7 @@
                 });
             });
             $scope.lflplacesbasisscholen = lflPlaces;
+            $scope.lflrefresh = true;
         }
 
         $scope.isList = true;
