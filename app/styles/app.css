@@ -1,3 +1,45 @@
 .item-completed{
     opacity:0.2;
 }
+
+/*
+Global styles
+*/
+html, body{
+    height:100%;
+    min-height:100%;
+}
+/*
+Preloader styles
+*/
+.preloader{
+    background:#3498DB;
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.preloader-indicator{
+    position:absolute;
+    width:120px;
+    height:60px;
+    left:50%;
+    top:50%;
+    margin-left:-60px;
+    margin-top:-30px;
+}
+
+/*
+Logo Gent
+*/
+.navbar-brand .city{
+    border-radius:6px;
+    background:#0091be;
+    color:#fff;
+    padding:6px;
+}
+.navbar-brand .division{
+    border-radius:6px;
+    background:#fff;
+    color:#0091be;
+    padding:6px;
+}
