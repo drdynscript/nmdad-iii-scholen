@@ -16,6 +16,11 @@
             basisschooltype: $scope.basisschooltypes[0]
         };
 
-        ScholenSrvc.loadData();
+        $scope.basisscholen = null;
+
+        if(ScholenSrvc.getDataBasisscholen() !== null){
+            $scope.basisscholen = ScholenSrvc.getDataBasisscholen();
+            console.log($scope.basisscholen);
+        }
     }]);
 })();
