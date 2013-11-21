@@ -17,5 +17,8 @@ angular.module('ddsApp', [
         $routeProvider.when('/', {templateUrl:'views/main.html', controller:'ddsApp.controllers.MainCtrl'});
         $routeProvider.when('/todo', {templateUrl:'views/todo.html', controller:'ddsApp.controllers.ToDoCtrl'});
         $routeProvider.when('/basisscholen', {templateUrl:'views/basisscholen.html', controller:'ddsApp.controllers.BasisscholenCtrl'});
+        $routeProvider.when('/secundairescholen', {templateUrl:'views/secundairescholen.html', controller:'ddsApp.controllers.SecundairescholenCtrl'});
+        $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
+        $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
