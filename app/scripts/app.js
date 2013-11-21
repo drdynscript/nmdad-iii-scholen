@@ -23,5 +23,11 @@ angular.module('ddsApp', [
         $routeProvider.otherwise({redirectTo: '/'});
     }])
 .run(['$rootScope', '$timeout', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, ScholenSrvc){
+        $rootScope.appInitialized = false;
+        $rootScope.$on('ddsApp.services.ScholenSrvc.resourcesLoaded', function(){
+            $timeout(function(){
+                $rootScope.appInitialized = true;
+            }, 2000)
+        });
         ScholenSrvc.loadData();
     }]);
