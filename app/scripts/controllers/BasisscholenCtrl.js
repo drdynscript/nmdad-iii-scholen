@@ -62,6 +62,7 @@
         $scope.isList = true;
         $scope.changeIsList = function(isList){
             $scope.isList = isList;
+            $scope.lflrefresh = !isList;
         };
     }]);
 })();

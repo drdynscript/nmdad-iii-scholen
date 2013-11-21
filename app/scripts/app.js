@@ -11,7 +11,7 @@ angular.module('ddsApp', [
     'ddsApp.services',
     'ddsApp.directives'
 ])
-.config(['$routeProvider','$locationProvider', '$httpProvider',function($routeProvider, $locationProvider, $httpProvider){
+.config(['$routeProvider','$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider){
         $httpProvider.defaults.useXDomain = true;//Cross Domain Calls --> Ok Ready
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -23,8 +23,14 @@ angular.module('ddsApp', [
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.otherwise({redirectTo: '/'});
     }])
-.run(['$rootScope', '$timeout', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, ScholenSrvc){
+.run(['$rootScope', '$timeout', '$location', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, $location, ScholenSrvc){
         $rootScope.appInitialized = false;
+        $rootScope.$on('$routeChangeStart', function (event, next, current)
+        {
+            if(!$rootScope.appInitialized){
+                $location.path("/");
+            }
+        });
         $rootScope.$on('ddsApp.services.ScholenSrvc.resourcesLoaded', function(){
             $timeout(function(){
                 $rootScope.appInitialized = true;
