@@ -57,3 +57,13 @@ Logo Gent
     color:#0091be;
     padding:6px;
 }
+
+/*
+Leaflet
+*/
+.leaflet-holder{
+    min-height:260px;
+    display:block;
+    box-sizing:border-box;
+    border:6px solid #aaa;
+}

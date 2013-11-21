@@ -20,13 +20,34 @@
             var filteredBasisscholen = $filter('filter')($scope.basisscholen, {'aanbod':$scope.form.basisschooltype.value});
 
             $('#info-message').html('<span class="badge pull-left">' + filteredBasisscholen.length + '</span>' + ' basisscholen');
+
+            var lflPlaces = [];
+            angular.forEach(filteredBasisscholen, function(basisschool, key){
+                lflPlaces.push({
+                    lat:basisschool.lat,
+                    lng:basisschool.long,
+                    dsc:'<strong>' + basisschool.roepnaam + '</strong>'
+                });
+            });
+            $scope.lflplacesbasisscholen = lflPlaces;
         });
 
         $scope.basisscholen = null;
+        $scope.lflplacesbasisscholen = null;
 
         if(ScholenSrvc.getDataBasisscholen() !== null){
             $scope.basisscholen = ScholenSrvc.getDataBasisscholen();
             $('#info-message').html('<span class="badge pull-left">' + $scope.basisscholen.length + '</span>' + ' basisscholen');
+
+            var lflPlaces = [];
+            angular.forEach($scope.basisscholen, function(basisschool, key){
+                lflPlaces.push({
+                    lat:basisschool.lat,
+                    lng:basisschool.long,
+                    dsc:'<strong>' + basisschool.roepnaam + '</strong>'
+                });
+            });
+            $scope.lflplacesbasisscholen = lflPlaces;
         }
 
         $scope.isList = true;
