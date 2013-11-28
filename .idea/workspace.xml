@@ -12,7 +12,7 @@
     <file path="/app.css" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385630008367" ignored="false" />
     <file path="/ScholenSrvc.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385628030461" ignored="false" />
     <file path="/BasisscholenCtrl.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385029991807" ignored="false" />
-    <file path="/basisscholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385029669001" ignored="false" />
+    <file path="/basisscholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385634839001" ignored="false" />
     <file path="/secundairescholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385630727321" ignored="false" />
     <file path="/about.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385021554610" ignored="false" />
     <file path="/favorieten.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385021559466" ignored="false" />
@@ -58,15 +58,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScholenSrvc.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="36" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasisschoolCtrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BasisschoolCtrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/BasisschoolCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="5" selection-start="611" selection-end="611" vertical-scroll-proportion="0.67620754">
+            <state line="16" column="0" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,6 +89,15 @@
         <entry file="file://$PROJECT_DIR$/app/views/secundairescholen.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="26" column="63" selection-start="1194" selection-end="1194" vertical-scroll-proportion="-17.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basisscholen.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/basisscholen.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="21" selection-start="932" selection-end="965" vertical-scroll-proportion="0.39399624">
               <folding />
             </state>
           </provider>
@@ -143,7 +143,6 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/Secundairescholen.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/FavorietenCtrl.js" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/app/views/basisscholen.html" />
         <option value="$PROJECT_DIR$/app/scripts/common/directives/LeafletManyPlaces.js" />
         <option value="$PROJECT_DIR$/app/views/app.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js" />
@@ -156,6 +155,7 @@
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/common/directives/LeafletOnePlace.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/views/basisscholen.html" />
       </list>
     </option>
   </component>
@@ -520,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/basisscholen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="45" selection-start="0" selection-end="1442" vertical-scroll-proportion="-6.923077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="102" column="36" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.0">
@@ -592,7 +585,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/BasisschoolCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="5" selection-start="611" selection-end="611" vertical-scroll-proportion="0.67620754">
+        <state line="16" column="0" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/basisscholen.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="21" selection-start="932" selection-end="965" vertical-scroll-proportion="0.39399624">
           <folding />
         </state>
       </provider>
