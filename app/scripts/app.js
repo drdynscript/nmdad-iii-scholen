@@ -50,6 +50,7 @@ var appCtrl = app.controller('AppCtrl', ['$scope', '$location', function($scope,
 }]);
 
 appCtrl.loadData = ['$q', '$timeout', 'ddsApp.services.ScholenSrvc', function($q, $timeout, ScholenSrvc){
+    
 
 }];
 
