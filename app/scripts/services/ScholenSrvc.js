@@ -4,9 +4,12 @@
     var services = angular.module('ddsApp.services');
 
     services.factory('ddsApp.services.ScholenSrvc',
-    ['$rootScope', '$http', function($rootScope, $http){
+    ['$rootScope', '$http', '$q', function($rootScope, $http, $q){
         var URLBASISSCHOLEN = "http://data.appsforghent.be/poi/basisscholen.json?callback=JSON_CALLBACK";
         var URLSECUNDAIRESCHOLEN = "http://data.appsforghent.be/poi/secundairescholen.json?callback=JSON_CALLBACK";
+        var MSGBASISSCHOLENLOADERROR = "Could not load the basischolen data from the requested URI.";
+        var MSGSECUNDAIRESCHOLENLOADERROR = "Could not load the secundaire scholen data from the requested URI.";
+        var MSGSCHOLENLOADERROR = "Could not load the basischolen and/or secundaire scholen data from the requested URI.";
 
         var _basisscholen = null,
             _secundairescholen = null,
@@ -18,54 +21,95 @@
         var that = this;//Hack for calling private functions and variables in the return statement
 
         this.loadBasisscholen = function(){
+            var deferred = $q.defer();
+
             if(_basisscholen === null){
                 $http.jsonp(URLBASISSCHOLEN).
                     success(function(data, status, headers, config){
                         _basisscholen = data.basisscholen;
-                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceLoaded');
+                        deferred.resolve(_basisscholen);
                     }).
                     error(function(data, status, headers, config){
-                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceError');
+                        deferred.reject(MSGBASISSCHOLENLOADERROR);
                     });
             }else{
-                $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceLoaded');
+                deferred.resolve(_basisscholen);
             }
+
+            return deferred.promise;//Always return a promise
         };
 
         this.loadSecundairescholen = function(){
+            var deferred = $q.defer();
+
             if(_secundairescholen === null){
                 $http.jsonp(URLSECUNDAIRESCHOLEN).
                     success(function(data, status, headers, config){
                         _secundairescholen = data.secundairescholen;
-                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceLoaded');
+                        deferred.resolve(_secundairescholen);
 
                     }).
                     error(function(data, status, headers, config){
-                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceError');
+                        deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
                     });
             }else{
-                $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourceLoaded');
+                deferred.resolve(_secundairescholen);
             }
+
+            return deferred.promise;//Always return a promise
         };
 
         return{
             loadData:function(){
-                $rootScope.$on('ddsApp.services.ScholenSrvc.resourceLoaded', function(){
-                    _numberOfResourcesLoadedViaAJAX++;
-                    if(_numberOfResourcesLoadedViaAJAX === _numberOfResourcesToLoadViaAJAX)
-                        $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourcesLoaded');
-                });
-                $rootScope.$on('ddsApp.services.ScholenSrvc.resourceError', function(){
-                    $rootScope.$broadcast('ddsApp.services.ScholenSrvc.resourcesError');
-                });
-                that.loadBasisscholen();
-                that.loadSecundairescholen();
+                var deferred = $q.defer();
+
+                that.loadBasisscholen().then(
+                    function(data){
+                        _numberOfResourcesLoadedViaAJAX++;
+                        if(_numberOfResourcesLoadedViaAJAX === _numberOfResourcesToLoadViaAJAX){
+                            deferred.resolve(true);
+                        }
+                    },
+                    function(error){
+                        deferred.reject(MSGSCHOLENLOADERROR);
+                    }
+                );
+
+                that.loadSecundairescholen().then(
+                    function(data){
+                        _numberOfResourcesLoadedViaAJAX++;
+                        if(_numberOfResourcesLoadedViaAJAX === _numberOfResourcesToLoadViaAJAX){
+                            deferred.resolve(true);
+                        }
+                    },
+                    function(error){
+                        deferred.reject(MSGSCHOLENLOADERROR);
+                    }
+                );
+
+                return deferred.promise;
             },
             getDataBasisscholen:function(){
-                return _basisscholen;
+                var deferred = $q.defer();
+
+                if(_basisscholen === null){
+                    deferred.reject(MSGBASISSCHOLENLOADERROR);
+                }else{
+                    deferred.resolve(_basisscholen);
+                }
+
+                return deferred.promise;
             },
             getDataSecundairescholen:function(){
-                return _secundairescholen;
+                var deferred = $q.defer();
+
+                if(_secundairescholen === null){
+                    deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
+                }else{
+                    deferred.resolve(_secundairescholen);
+                }
+
+                return deferred.promise;
             }
         }
     }]);

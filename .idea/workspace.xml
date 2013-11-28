@@ -10,7 +10,7 @@
     <file path="/todo.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384430987009" ignored="false" />
     <file path="/ToDoCtrl.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384430834734" ignored="false" />
     <file path="/app.css" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385030409163" ignored="false" />
-    <file path="/ScholenSrvc.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385023487540" ignored="false" />
+    <file path="/ScholenSrvc.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385628030461" ignored="false" />
     <file path="/BasisscholenCtrl.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385029991807" ignored="false" />
     <file path="/basisscholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385029669001" ignored="false" />
     <file path="/secundairescholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385021532306" ignored="false" />
@@ -54,19 +54,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScholenSrvc.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ScholenSrvc.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="49" selection-start="109" selection-end="136" vertical-scroll-proportion="0.0">
+            <state line="103" column="42" selection-start="4103" selection-end="4103" vertical-scroll-proportion="0.42068964">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="38" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.35344827">
+            <state line="51" column="16" selection-start="2172" selection-end="2180" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,7 +144,6 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/AboutCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/Secundairescholen.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/FavorietenCtrl.js" />
-        <option value="$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js" />
         <option value="$PROJECT_DIR$/bower.json" />
@@ -152,6 +151,7 @@
         <option value="$PROJECT_DIR$/app/views/basisscholen.html" />
         <option value="$PROJECT_DIR$/app/scripts/common/directives/LeafletManyPlaces.js" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js" />
       </list>
     </option>
   </component>
@@ -569,16 +569,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="49" selection-start="109" selection-end="136" vertical-scroll-proportion="0.0">
+        <state line="51" column="16" selection-start="2172" selection-end="2180" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="38" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.35344827">
+        <state line="103" column="42" selection-start="4103" selection-end="4103" vertical-scroll-proportion="0.42068964">
           <folding />
         </state>
       </provider>
