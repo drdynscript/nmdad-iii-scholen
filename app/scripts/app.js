@@ -4,7 +4,7 @@ angular.module('ddsApp.controllers', []);
 angular.module('ddsApp.services', []);
 angular.module('ddsApp.directives', []);
 
-angular.module('ddsApp', [
+var app = angular.module('ddsApp', [
     'ngRoute',
     'ngResource',
     'ddsApp.controllers',
@@ -23,7 +23,11 @@ angular.module('ddsApp', [
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.when('/app', {
             templateUrl:'views/app.html',
-            controller:'ddsApp.controllers.AppCtrl'});
+            controller:'AppCtrl',
+            resolve: {
+                appInitialized: appCtrl.loadData
+            }
+        });
         $routeProvider.otherwise({redirectTo: '/'});
     }])
 .run(['$rootScope', '$timeout', '$location', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, $location, ScholenSrvc){
@@ -47,13 +51,28 @@ angular.module('ddsApp', [
     * Return the promises
     * Resolve for each route
 */
-var appCtrl = app.controller('AppCtrl', ['$scope', '$location', function($scope, $location){
-
+var appCtrl = app.controller('AppCtrl', ['$scope', '$location', 'appInitialized', function($scope, $location, appInitialized){
+    if(appInitialized){
+        $location.path('/');
+    }
 }]);
 
-appCtrl.loadData = ['$q', '$timeout', 'ddsApp.services.ScholenSrvc', function($q, $timeout, ScholenSrvc){
-    
+appCtrl.loadData = ['$rootScope', '$q', '$timeout', 'ddsApp.services.ScholenSrvc', function($rootScope, $q, $timeout, ScholenSrvc){
+    var deferred = $q.defer();
 
+    ScholenSrvc.loadData().then(
+        function(data){
+            $timeout(function(){
+                $rootScope.appInitialized = true;
+                deferred.resolve(data);
+            },2000);
+        },
+        function(error){
+            deferred.reject(error);
+        }
+    );
+
+    return deferred.promise;
 }];
 
 appCtrl.getAmountOfScholenPerType = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
