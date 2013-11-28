@@ -3,7 +3,7 @@
 
     var controllers = angular.module('ddsApp.controllers');
 
-    controllers.controller('ddsApp.controllers.BasisscholenCtrl',['$scope', '$filter', 'ddsApp.services.ScholenSrvc', function($scope, $filter, ScholenSrvc){
+    controllers.controller('ddsApp.controllers.BasisscholenCtrl',['$scope', '$filter', 'ddsApp.services.ScholenSrvc', 'basisscholen', function($scope, $filter, ScholenSrvc, basisscholen){
         $scope.basisschooltypes = [
             {'label':'-- Alle basisscholen --','value':''},
             {'label':'Kleuterscholen','value':'Kleuter'},
@@ -39,25 +39,19 @@
             }
         });
 
-        $scope.basisscholen = null;
-        $scope.lflplacesbasisscholen = null;
-        $scope.lflrefresh = null;
+        $scope.basisscholen = basisscholen;
+        $('#info-message').html('<span class="badge pull-left">' + $scope.basisscholen.length + '</span>' + ' basisscholen');
 
-        if(ScholenSrvc.getDataBasisscholen() !== null){
-            $scope.basisscholen = ScholenSrvc.getDataBasisscholen();
-            $('#info-message').html('<span class="badge pull-left">' + $scope.basisscholen.length + '</span>' + ' basisscholen');
-
-            var lflPlaces = [];
-            angular.forEach($scope.basisscholen, function(basisschool, key){
-                lflPlaces.push({
-                    lat:basisschool.lat,
-                    lng:basisschool.long,
-                    dsc:'<strong>' + basisschool.roepnaam + '</strong>'
-                });
+        var lflPlaces = [];
+        angular.forEach($scope.basisscholen, function(basisschool, key){
+            lflPlaces.push({
+                lat:basisschool.lat,
+                lng:basisschool.long,
+                dsc:'<strong>' + basisschool.roepnaam + '</strong>'
             });
-            $scope.lflplacesbasisscholen = lflPlaces;
-            $scope.lflrefresh = true;
-        }
+        });
+        $scope.lflplacesbasisscholen = lflPlaces;
+        $scope.lflrefresh = true;
 
         $scope.isList = true;
         $scope.changeIsList = function(isList){

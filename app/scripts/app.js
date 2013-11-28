@@ -17,7 +17,13 @@ var app = angular.module('ddsApp', [
 
         $routeProvider.when('/', {templateUrl:'views/main.html', controller:'ddsApp.controllers.MainCtrl'});
         $routeProvider.when('/todo', {templateUrl:'views/todo.html', controller:'ddsApp.controllers.ToDoCtrl'});
-        $routeProvider.when('/basisscholen', {templateUrl:'views/basisscholen.html', controller:'ddsApp.controllers.BasisscholenCtrl'});
+        $routeProvider.when('/basisscholen', {
+            templateUrl:'views/basisscholen.html',
+            controller:'ddsApp.controllers.BasisscholenCtrl',
+            resolve: {
+                basisscholen: appCtrl.getDataBasisscholen
+            }
+        });
         $routeProvider.when('/secundairescholen', {templateUrl:'views/secundairescholen.html', controller:'ddsApp.controllers.SecundairescholenCtrl'});
         $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
@@ -80,5 +86,16 @@ appCtrl.getAmountOfScholenPerType = ['$q', 'ddsApp.services.ScholenSrvc', functi
 }];
 
 appCtrl.getDataBasisscholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+    var deferred = $q.defer();
 
+    ScholenSrvc.getDataBasisscholen().then(
+        function(data){
+            deferred.resolve(data);
+        },
+        function(error){
+            deferred.reject(error);
+        }
+    );
+
+    return deferred.promise;
 }];
