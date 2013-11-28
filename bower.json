@@ -24,6 +24,7 @@
     "angular-cookies": "1.2.0-rc.3",
     "angular-animate": "1.2.0-rc.3",
     "font-awesome": "4.0.1",
-    "leaflet": "0.6.3"
+    "leaflet": "0.6.3",
+    "angular-local-storage":"*"
   }
 }
