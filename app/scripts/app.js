@@ -28,26 +28,14 @@ angular.module('ddsApp', [
     }])
 .run(['$rootScope', '$timeout', '$location', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, $location, ScholenSrvc){
         $rootScope.appInitialized = false;
-<<<<<<< HEAD
+
         $rootScope.$on('$routeChangeStart', function(event, next, current){
            if(!$rootScope.appInitialized){
                $location.path('/app');
            }else if($rootScope.appInitialized && $location.path() === '/app'){
                $location.path('/');
            }
-=======
-        $rootScope.$on('$routeChangeStart', function (event, next, current)
-        {
-            if(!$rootScope.appInitialized){
-                $location.path("/");
-            }
-        });
-        $rootScope.$on('ddsApp.services.ScholenSrvc.resourcesLoaded', function(){
-            $timeout(function(){
-                $rootScope.appInitialized = true;
-            }, 2000)
->>>>>>> b720eadbbc5b3f807364558a4cb12c46a289f2be
-        });
+        })
     }]);
 
 /*
