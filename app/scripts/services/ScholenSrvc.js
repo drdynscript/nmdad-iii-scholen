@@ -49,15 +49,22 @@
             var deferred = $q.defer();
 
             if(_secundairescholen === null){
-                $http.jsonp(URLSECUNDAIRESCHOLEN).
-                    success(function(data, status, headers, config){
-                        _secundairescholen = data.secundairescholen;
-                        deferred.resolve(_secundairescholen);
+                if(localStorageService.get('secundairescholen') === null){
+                    $http.jsonp(URLSECUNDAIRESCHOLEN).
+                        success(function(data, status, headers, config){
+                            _secundairescholen = data.secundairescholen;
+                            localStorageService.set('secundairescholen', _secundairescholen);
+                            deferred.resolve(_secundairescholen);
 
-                    }).
-                    error(function(data, status, headers, config){
-                        deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
-                    });
+                        }).
+                        error(function(data, status, headers, config){
+                            deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
+                        });
+                }
+                else{
+                    _secundairescholen = localStorageService.get('secundairescholen');
+                    deferred.resolve(_secundairescholen);
+                }
             }else{
                 deferred.resolve(_secundairescholen);
             }
@@ -116,6 +123,43 @@
                 }
 
                 return deferred.promise;
+            },
+            isBasisschoolAlreadyFavorite:function(schoolId){
+                if(localStorageService.get('basisscholenfavorites') === null)
+                    return false;
+
+                var favos = localStorageService.get('basisscholenfavorites');
+
+                var school = _.find(favos, function(sId){
+                   return sId === schoolId;
+                });
+
+                if(typeof school === 'undefined')
+                    return false;
+
+                return true;
+            },
+            addBasisschoolToFavorites:function(schoolId){
+                if(!this.isBasisschoolAlreadyFavorite(schoolId)){
+                    _favosBasisscholen = localStorageService.get('basisscholenfavorites');
+
+                    if(_favosBasisscholen === null){
+                        _favosBasisscholen = [];
+                    }
+
+                    _favosBasisscholen.push(schoolId);
+                    localStorageService.set('basisscholenfavorites', _favosBasisscholen);
+                }
+            },
+            removeBasisschoolToFavorites:function(schoolId){
+                if(this.isBasisschoolAlreadyFavorite(schoolId)){
+                    _favosBasisscholen = localStorageService.get('basisscholenfavorites');
+
+                    if(_favosBasisscholen !== null){
+                        _favosBasisscholen = _.pull(_favosBasisscholen, schoolId);
+                        localStorageService.set('basisscholenfavorites', _favosBasisscholen);
+                    }
+                }
             }
         }
     }]);
