@@ -1,1 +1,37 @@
-SECUNDAIRESCHOLEN
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group btn-group-justified">
+            <a href="" ng-class="{'btn':true, 'btn-default':true, 'active': isList == true}" ng-click="changeIsList(true)"><i class="fa fa-list"></i> List</a>
+            <a href="" ng-class="{'btn':true, 'btn-default':true, 'active': isList == false}" ng-click="changeIsList(false)"><i class="fa fa-map-marker"></i> Map</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <select class="form-control" ng-model="form.gemeente" ng-options="bst.label for bst in gemeenten">
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well well-sm" id="info-message">
+            666 secundaire scholen
+        </div>
+    </div>
+</div>
+<div class="row" ng-show="isList">
+    <div class="col-xs-12">
+        <div class="list-group">
+            <a href="" ng-repeat="secundaireschool in secundairescholen | filter:{'gemeente':form.gemeente.value}" class="list-group-item">
+                <h4 class="list-group-item-heading">{{secundaireschool.naam}}</h4>
+                <p class="list-group-item-text">{{secundaireschool.gemeente}}</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="row" ng-hide="isList">
+    <div class="col-xs-12">
+        <leafletmanyplaces lfl-places="lflplacessecundairescholen" lfl-refresh="lflrefresh"></leafletmanyplaces>
+    </div>
+</div>

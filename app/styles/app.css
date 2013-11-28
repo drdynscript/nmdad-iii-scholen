@@ -45,6 +45,13 @@ Preloader styles
 /*
 Logo Gent
 */
+.navbar{
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    border-radius:0;
+}
 .navbar-brand .city{
     border-radius:6px;
     background:#0091be;

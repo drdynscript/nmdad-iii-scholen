@@ -24,7 +24,13 @@ var app = angular.module('ddsApp', [
                 basisscholen: appCtrl.getDataBasisscholen
             }
         });
-        $routeProvider.when('/secundairescholen', {templateUrl:'views/secundairescholen.html', controller:'ddsApp.controllers.SecundairescholenCtrl'});
+        $routeProvider.when('/secundairescholen', {
+            templateUrl:'views/secundairescholen.html',
+            controller:'ddsApp.controllers.SecundairescholenCtrl',
+            resolve: {
+                secundairescholen: appCtrl.getDataSecundairescholen
+            }
+        });
         $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.when('/app', {
@@ -89,6 +95,21 @@ appCtrl.getDataBasisscholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q,
     var deferred = $q.defer();
 
     ScholenSrvc.getDataBasisscholen().then(
+        function(data){
+            deferred.resolve(data);
+        },
+        function(error){
+            deferred.reject(error);
+        }
+    );
+
+    return deferred.promise;
+}];
+
+appCtrl.getDataSecundairescholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+    var deferred = $q.defer();
+
+    ScholenSrvc.getDataSecundairescholen().then(
         function(data){
             deferred.resolve(data);
         },
