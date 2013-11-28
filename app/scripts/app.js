@@ -24,6 +24,13 @@ var app = angular.module('ddsApp', [
                 basisscholen: appCtrl.getDataBasisscholen
             }
         });
+        $routeProvider.when('/basisscholen/:schoolId', {
+            templateUrl:'views/basisschool.html',
+            controller:'ddsApp.controllers.BasisschoolCtrl',
+            resolve: {
+                basisscholen: appCtrl.getDataBasisscholen
+            }
+        });
         $routeProvider.when('/secundairescholen', {
             templateUrl:'views/secundairescholen.html',
             controller:'ddsApp.controllers.SecundairescholenCtrl',

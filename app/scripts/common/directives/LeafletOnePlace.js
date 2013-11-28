@@ -11,7 +11,6 @@
                 scope:{
                     lflPlace: '='
                 },
-                templateUrl: 'partials/leaflet.html',
                 link: function mapLink (scope, element, attrs) {
                     var schoolIcon = L.icon({
                         iconUrl: 'content/images/school_marker.png',
