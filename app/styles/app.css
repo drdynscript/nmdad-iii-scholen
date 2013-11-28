@@ -74,3 +74,16 @@ Leaflet
     box-sizing:border-box;
     border:6px solid #aaa;
 }
+
+/*
+School
+*/
+.school a{
+    position:relative;
+}
+.school a i{
+    position:absolute;
+    right:9px;
+    top:18px;
+    font-size:1.76em;
+}

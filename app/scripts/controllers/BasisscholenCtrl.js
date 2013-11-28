@@ -58,5 +58,9 @@
             $scope.isList = isList;
             $scope.lflrefresh = !isList;
         };
+
+        $scope.isSchoolAFavorite = function(schoolId){
+            return ScholenSrvc.isBasisschoolAlreadyFavorite(schoolId.toString());
+        }
     }]);
 })();

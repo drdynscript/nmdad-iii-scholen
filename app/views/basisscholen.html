@@ -21,8 +21,9 @@
 </div>
 <div class="row" ng-show="isList">
     <div class="col-xs-12">
-        <div class="list-group">
+        <div class="school list-group">
             <a href="#/basisscholen/{{basisschool.fid}}" ng-repeat="basisschool in basisscholen | filter:{'aanbod':form.basisschooltype.value}" class="list-group-item">
+                <i class="fa fa-thumbs-o-up" ng-show="isSchoolAFavorite({{basisschool.fid}})"></i>
                 <h4 class="list-group-item-heading">{{basisschool.roepnaam}}</h4>
                 <p class="list-group-item-text">{{basisschool.aanbod}}</p>
             </a>
