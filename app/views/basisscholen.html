@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row" ng-show="isList">
     <div class="col-xs-12">
         <div class="list-group">
             <a href="" ng-repeat="basisschool in basisscholen | filter:{'aanbod':form.basisschooltype.value}" class="list-group-item">
@@ -30,8 +30,8 @@
 
     </div>
 </div>
-<div class="row">
+<div class="row" ng-hide="isList">
     <div class="col-xs-12">
-        <leafletmanyplaces lfl-places="lflplacesbasisscholen"></leafletmanyplaces>
+        <leafletmanyplaces lfl-places="lflplacesbasisscholen" lfl-refresh="lflrefresh"></leafletmanyplaces>
     </div>
 </div>
