@@ -20,6 +20,9 @@ angular.module('ddsApp', [
         $routeProvider.when('/secundairescholen', {templateUrl:'views/secundairescholen.html', controller:'ddsApp.controllers.SecundairescholenCtrl'});
         $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
+        $routeProvider.when('/app', {
+            templateUrl:'views/app.html',
+            controller:'ddsApp.controllers.AppCtrl'});
         $routeProvider.otherwise({redirectTo: '/'});
     }])
 .run(['$rootScope', '$timeout', 'ddsApp.services.ScholenSrvc',function($rootScope, $timeout, ScholenSrvc){
@@ -31,3 +34,28 @@ angular.module('ddsApp', [
         });
         ScholenSrvc.loadData();
     }]);
+
+/*
+    AppCtrl
+    =======
+    Controller for the App
+    ----------------------
+    * Load Data Via the services
+    * Return the promises
+    * Resolve for each route
+*/
+var appCtrl = app.controller('AppCtrl', ['$scope', '$location', function($scope, $location){
+
+}]);
+
+appCtrl.loadData = ['$q', '$timeout', 'ddsApp.services.ScholenSrvc', function($q, $timeout, ScholenSrvc){
+
+}];
+
+appCtrl.getAmountOfScholenPerType = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+
+}];
+
+appCtrl.getDataBasisscholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+
+}];
