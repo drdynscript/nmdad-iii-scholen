@@ -17,7 +17,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <button type="button" class="btn btn-primary">Add To Favorites</button>
-        <button type="button" class="btn btn-default">Remove From Favorites</button>
+        <button type="button" ng-hide="isSchoolAFavorite" class="btn btn-primary" ng-click="addSchoolToFavorites()">Add To Favorites</button>
+        <button type="button" ng-show="isSchoolAFavorite" class="btn btn-default" ng-click="removeSchoolFromFavorites()">Remove From Favorites</button>
     </div>
 </div>

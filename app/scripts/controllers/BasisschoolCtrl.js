@@ -12,5 +12,21 @@
             lng:$scope.basisschool.long,
             dsc:'<strong>' + $scope.basisschool.roepnaam + '</strong>'
         };
+
+        $scope.isSchoolAFavorite = ScholenSrvc.isBasisschoolAlreadyFavorite(schoolId);
+
+        $scope.addSchoolToFavorites = function(){
+            if(!ScholenSrvc.isBasisschoolAlreadyFavorite(schoolId)){
+                ScholenSrvc.addBasisschoolToFavorites(schoolId);
+                $scope.isSchoolAFavorite = true;
+            }
+        }
+
+        $scope.removeSchoolFromFavorites = function(){
+            if(ScholenSrvc.isBasisschoolAlreadyFavorite(schoolId)){
+                ScholenSrvc.removeBasisschoolFromFavorites(schoolId);
+                $scope.isSchoolAFavorite = false;
+            }
+        }
     }]);
 })();

@@ -151,7 +151,7 @@
                     localStorageService.set('basisscholenfavorites', _favosBasisscholen);
                 }
             },
-            removeBasisschoolToFavorites:function(schoolId){
+            removeBasisschoolFromFavorites:function(schoolId){
                 if(this.isBasisschoolAlreadyFavorite(schoolId)){
                     _favosBasisscholen = localStorageService.get('basisscholenfavorites');
 
