@@ -4,12 +4,12 @@
     <list default="true" id="0726e165-3e25-402e-a538-e1acd8d92068" name="Default" comment="" />
     <ignored path="nmdad-iii-schools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385643388848" ignored="false" />
+    <file path="/index.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385643899835" ignored="false" />
     <file path="/app.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385635812982" ignored="false" />
     <file path="/main.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384424574897" ignored="false" />
     <file path="/todo.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384430987009" ignored="false" />
     <file path="/ToDoCtrl.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1384430834734" ignored="false" />
-    <file path="/app.css" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385642427690" ignored="false" />
+    <file path="/app.css" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385643984375" ignored="false" />
     <file path="/ScholenSrvc.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385642112926" ignored="false" />
     <file path="/BasisscholenCtrl.js" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385642817457" ignored="false" />
     <file path="/basisscholen.html" changelist="0726e165-3e25-402e-a538-e1acd8d92068" time="1385642692593" ignored="false" />
@@ -41,10 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="42" selection-start="1553" selection-end="1559" vertical-scroll-proportion="0.65445024">
+            <state line="23" column="39" selection-start="752" selection-end="771" vertical-scroll-proportion="-19.23077">
               <folding />
             </state>
           </provider>
@@ -104,10 +104,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/styles/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="6" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
+            <state line="42" column="22" selection-start="573" selection-end="573" vertical-scroll-proportion="0.6670886">
               <folding />
             </state>
           </provider>
@@ -152,11 +152,11 @@
         <option value="$PROJECT_DIR$/app/views/basisschool.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/BasisschoolCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/ScholenSrvc.js" />
-        <option value="$PROJECT_DIR$/app/styles/app.css" />
         <option value="$PROJECT_DIR$/app/views/basisscholen.html" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/BasisscholenCtrl.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/HeaderCtrl.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/app/styles/app.css" />
       </list>
     </option>
   </component>
@@ -549,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="6" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/BasisschoolCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="86" selection-start="606" selection-end="684" vertical-scroll-proportion="0.0">
@@ -593,7 +586,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="42" selection-start="1553" selection-end="1559" vertical-scroll-proportion="0.65445024">
+        <state line="23" column="39" selection-start="752" selection-end="771" vertical-scroll-proportion="-19.23077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="22" selection-start="573" selection-end="573" vertical-scroll-proportion="0.6670886">
           <folding />
         </state>
       </provider>

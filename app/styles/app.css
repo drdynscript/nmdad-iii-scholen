@@ -40,6 +40,11 @@ Preloader styles
     top:50%;
     margin-left:-60px;
     margin-top:-30px;
+    text-align:center;
+}
+.preloader-indicator img{
+    margin:0 auto 12px;
+    text-align:center;
 }
 
 /*
