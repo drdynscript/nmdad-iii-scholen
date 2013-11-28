@@ -61,6 +61,6 @@
 
         $scope.isSchoolAFavorite = function(schoolId){
             return ScholenSrvc.isBasisschoolAlreadyFavorite(schoolId.toString());
-        }
+        };
     }]);
 })();

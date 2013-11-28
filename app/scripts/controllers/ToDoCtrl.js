@@ -15,7 +15,7 @@
             $scope.items.push(newItem);
 
             $scope.itemText = '';
-        }
+        };
 
         $scope.completeItem = function(item){
           switch(item.state){

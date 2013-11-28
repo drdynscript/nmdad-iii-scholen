@@ -61,7 +61,7 @@ var app = angular.module('ddsApp', [
            }else if($rootScope.appInitialized && $location.path() === '/app'){
                $location.path('/');
            }
-        })
+        });
     }]);
 
 /*

@@ -5,11 +5,11 @@
 
     services.factory('ddsApp.services.ScholenSrvc',
     ['$rootScope', '$http', '$q', 'localStorageService', function($rootScope, $http, $q, localStorageService){
-        var URLBASISSCHOLEN = "http://data.appsforghent.be/poi/basisscholen.json?callback=JSON_CALLBACK";
-        var URLSECUNDAIRESCHOLEN = "http://data.appsforghent.be/poi/secundairescholen.json?callback=JSON_CALLBACK";
-        var MSGBASISSCHOLENLOADERROR = "Could not load the basischolen data from the requested URI.";
-        var MSGSECUNDAIRESCHOLENLOADERROR = "Could not load the secundaire scholen data from the requested URI.";
-        var MSGSCHOLENLOADERROR = "Could not load the basischolen and/or secundaire scholen data from the requested URI.";
+        var URLBASISSCHOLEN = 'http://data.appsforghent.be/poi/basisscholen.json?callback=JSON_CALLBACK';
+        var URLSECUNDAIRESCHOLEN = 'http://data.appsforghent.be/poi/secundairescholen.json?callback=JSON_CALLBACK';
+        var MSGBASISSCHOLENLOADERROR = 'Could not load the basischolen data from the requested URI.';
+        var MSGSECUNDAIRESCHOLENLOADERROR = 'Could not load the secundaire scholen data from the requested URI.';
+        var MSGSCHOLENLOADERROR = 'Could not load the basischolen and/or secundaire scholen data from the requested URI.';
 
         var _basisscholen = null,
             _secundairescholen = null,
@@ -161,6 +161,6 @@
                     }
                 }
             }
-        }
+        };
     }]);
 })();

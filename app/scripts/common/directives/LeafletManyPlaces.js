@@ -59,7 +59,7 @@
 
                     angular.element($window).bind('resize', function () {
                         scope.$apply();
-                        L.Util.requestAnimFrame(scope.map.invalidateSize,scope.map,false,scope.map._container)
+                        L.Util.requestAnimFrame(scope.map.invalidateSize,scope.map,false,scope.map._container);
                     });
 
                     scope.$watch('lflRefresh', function(oldVal, newVal) {
