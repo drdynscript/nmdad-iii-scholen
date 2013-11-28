@@ -4,7 +4,7 @@
     var services = angular.module('ddsApp.services');
 
     services.factory('ddsApp.services.ScholenSrvc',
-    ['$rootScope', '$http', '$q', function($rootScope, $http, $q){
+    ['$rootScope', '$http', '$q', 'localStorageService', function($rootScope, $http, $q, localStorageService){
         var URLBASISSCHOLEN = "http://data.appsforghent.be/poi/basisscholen.json?callback=JSON_CALLBACK";
         var URLSECUNDAIRESCHOLEN = "http://data.appsforghent.be/poi/secundairescholen.json?callback=JSON_CALLBACK";
         var MSGBASISSCHOLENLOADERROR = "Could not load the basischolen data from the requested URI.";
@@ -24,14 +24,20 @@
             var deferred = $q.defer();
 
             if(_basisscholen === null){
-                $http.jsonp(URLBASISSCHOLEN).
-                    success(function(data, status, headers, config){
-                        _basisscholen = data.basisscholen;
-                        deferred.resolve(_basisscholen);
-                    }).
-                    error(function(data, status, headers, config){
-                        deferred.reject(MSGBASISSCHOLENLOADERROR);
-                    });
+                if(localStorageService.get('basisscholen') === null){
+                    $http.jsonp(URLBASISSCHOLEN).
+                        success(function(data, status, headers, config){
+                            _basisscholen = data.basisscholen;
+                            localStorageService.set('basisscholen', _basisscholen);
+                            deferred.resolve(_basisscholen);
+                        }).
+                        error(function(data, status, headers, config){
+                            deferred.reject(MSGBASISSCHOLENLOADERROR);
+                        });
+                }else{
+                    _basisscholen = localStorageService.get('basisscholen');
+                    deferred.resolve(_basisscholen);
+                }
             }else{
                 deferred.resolve(_basisscholen);
             }

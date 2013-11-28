@@ -1,5 +1,7 @@
 'use strict';
 
+angular.module('LocalStorageModule').value('prefix', 'dds_scholen');
+
 angular.module('ddsApp.controllers', []);
 angular.module('ddsApp.services', []);
 angular.module('ddsApp.directives', []);
@@ -9,7 +11,8 @@ var app = angular.module('ddsApp', [
     'ngResource',
     'ddsApp.controllers',
     'ddsApp.services',
-    'ddsApp.directives'
+    'ddsApp.directives',
+    'LocalStorageModule'
 ])
 .config(['$routeProvider','$locationProvider', '$httpProvider', function($routeProvider, $locationProvider, $httpProvider){
         $httpProvider.defaults.useXDomain = true;//Cross Domain Calls --> Ok Ready
