@@ -21,8 +21,9 @@
 </div>
 <div class="row" ng-show="isList">
     <div class="col-xs-12">
-        <div class="list-group">
-            <a href="" ng-repeat="secundaireschool in secundairescholen | filter:{'gemeente':form.gemeente.value}" class="list-group-item">
+        <div class="school list-group">
+            <a href="#/secundairescholen/{{secundaireschool.fid}}" ng-repeat="secundaireschool in secundairescholen | filter:{'gemeente':form.gemeente.value}" class="list-group-item">
+                <i class="fa fa-thumbs-o-up" ng-show="isSchoolAFavorite({{secundaireschool.fid}})"></i>
                 <h4 class="list-group-item-heading">{{secundaireschool.naam}}</h4>
                 <p class="list-group-item-text">{{secundaireschool.gemeente}}</p>
             </a>

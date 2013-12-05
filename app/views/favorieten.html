@@ -1,1 +1,42 @@
-FAVORIETEN
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Basisscholen
+            </div>
+            <ul class="favos list-group">
+                <li href="#/basisscholen/{{basisschool.fid}}" ng-repeat="basisschool in favosbasisscholen" class="list-group-item clearfix">
+                    <div class="pull-left">
+                        <h4 class="list-group-item-heading">{{basisschool.roepnaam}} </h4>
+                        <p class="list-group-item-text">{{basisschool.aanbod}} </p>
+                    </div>
+                        <span class="actions pull-right clearfix">
+                            <a href="#/basisscholen/{{basisschool.fid}}"><i class="fa fa-eye"></i></a>
+                            <a href="" ng-click="removeBasisschoolFromFavorites({{basisschool.fid}})"><i class="fa fa-trash-o"></i></a>
+                        </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Secundaire scholen
+            </div>
+            <ul class="favos list-group">
+                <li ng-repeat="secundaireschool in favossecundairescholen" class="list-group-item clearfix">
+                    <div class="pull-left">
+                        <h4 class="list-group-item-heading">{{secundaireschool.naam}} </h4>
+                        <p class="list-group-item-text">{{secundaireschool.gemeente}} </p>
+                    </div>
+                        <span class="actions pull-right clearfix">
+                            <a href="#/secundairescholen/{{secundaireschool.fid}}" ><i class="fa fa-eye"></i></a>
+                            <a href="" ng-click="removeSecundaireschoolFromFavorites({{secundaireschool.fid}})"><i class="fa fa-trash-o"></i></a>
+                        </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

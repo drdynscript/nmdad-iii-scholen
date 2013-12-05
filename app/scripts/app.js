@@ -41,7 +41,22 @@ var app = angular.module('ddsApp', [
                 secundairescholen: appCtrl.getDataSecundairescholen
             }
         });
-        $routeProvider.when('/favorieten', {templateUrl:'views/favorieten.html', controller:'ddsApp.controllers.FavorietenCtrl'});
+        $routeProvider.when('/secundairescholen/:schoolId', {
+            templateUrl:'views/secundaireschool.html',
+            controller:'ddsApp.controllers.SecundaireschoolCtrl',
+            resolve: {
+                secundairescholen: appCtrl.getDataSecundairescholen
+            }
+        });
+        $routeProvider.when('/favorieten', {
+            templateUrl:'views/favorieten.html',
+            controller:'ddsApp.controllers.FavorietenCtrl',
+            resolve: {
+                favosbasisscholen: appCtrl.getFavosBasisscholen,
+                favossecundairescholen: appCtrl.getFavosSecundairescholen
+            }
+        });
+
         $routeProvider.when('/about', {templateUrl:'views/about.html', controller:'ddsApp.controllers.AboutCtrl'});
         $routeProvider.when('/app', {
             templateUrl:'views/app.html',
@@ -120,6 +135,36 @@ appCtrl.getDataSecundairescholen = ['$q', 'ddsApp.services.ScholenSrvc', functio
     var deferred = $q.defer();
 
     ScholenSrvc.getDataSecundairescholen().then(
+        function(data){
+            deferred.resolve(data);
+        },
+        function(error){
+            deferred.reject(error);
+        }
+    );
+
+    return deferred.promise;
+}];
+
+appCtrl.getFavosBasisscholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+    var deferred = $q.defer();
+
+    ScholenSrvc.getFavoritesBasisscholen().then(
+        function(data){
+            deferred.resolve(data);
+        },
+        function(error){
+            deferred.reject(error);
+        }
+    );
+
+    return deferred.promise;
+}];
+
+appCtrl.getFavosSecundairescholen = ['$q', 'ddsApp.services.ScholenSrvc', function($q, ScholenSrvc){
+    var deferred = $q.defer();
+
+    ScholenSrvc.getFavoritesSecundairescholen().then(
         function(data){
             deferred.resolve(data);
         },

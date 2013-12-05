@@ -72,9 +72,32 @@
             return deferred.promise;//Always return a promise
         };
 
+        this.loadDataFavoritesBasisscholen = function(){
+            if(_favosBasisscholen === null){
+                if(localStorageService.get('basisscholenfavorites') === null){
+                    _favosBasisscholen = [];
+                }else{
+                    _favosBasisscholen = localStorageService.get('basisscholenfavorites');
+                }
+            }
+        };
+
+        this.loadDataFavoritesSecundairescholen = function(){
+            if(_favosSecundairescholen === null){
+                if(localStorageService.get('secundairescholenfavorites') === null){
+                    _favosSecundairescholen = [];
+                }else{
+                    _favosSecundairescholen = localStorageService.get('secundairescholenfavorites');
+                }
+            }
+        };
+
         return{
             loadData:function(){
                 var deferred = $q.defer();
+
+                that.loadDataFavoritesBasisscholen();
+                that.loadDataFavoritesSecundairescholen();
 
                 that.loadBasisscholen().then(
                     function(data){
@@ -124,6 +147,43 @@
 
                 return deferred.promise;
             },
+            getFavoritesBasisscholen:function(){
+                var deferred = $q.defer();
+
+                var favos = [];
+                if(_favosBasisscholen !== null){
+                    _.each(_favosBasisscholen, function(id){
+                        var school = _.find(_basisscholen, function(basisschool){
+                            return basisschool.fid === id;
+                        });
+                        if(typeof school !== 'undefined')
+                            favos.push(school);
+                    });
+                    deferred.resolve(favos);
+                }else{
+                    deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
+                }
+                return deferred.promise;
+            },
+            getFavoritesSecundairescholen:function(){
+                var deferred = $q.defer();
+
+                var favos = [];
+                if(_favosSecundairescholen !== null){
+                    _.each(_favosSecundairescholen, function(id){
+                        var school = _.find(_secundairescholen, function(secundaireschool){
+                            return secundaireschool.fid === id;
+                        });
+                        if(typeof school !== 'undefined')
+                            favos.push(school);
+                    });
+                    deferred.resolve(favos);
+                }
+                else{
+                    deferred.reject(MSGSECUNDAIRESCHOLENLOADERROR);
+                }
+                return deferred.promise;
+            },
             isBasisschoolAlreadyFavorite:function(schoolId){
                 if(localStorageService.get('basisscholenfavorites') === null)
                     return false;
@@ -132,6 +192,21 @@
 
                 var school = _.find(favos, function(sId){
                    return sId === schoolId;
+                });
+
+                if(typeof school === 'undefined')
+                    return false;
+
+                return true;
+            },
+            isSecundaireschoolAlreadyFavorite:function(schoolId){
+                if(localStorageService.get('secundairescholenfavorites') === null)
+                    return false;
+
+                var favos = localStorageService.get('secundairescholenfavorites');
+
+                var school = _.find(favos, function(sId){
+                    return sId === schoolId;
                 });
 
                 if(typeof school === 'undefined')
@@ -158,6 +233,28 @@
                     if(_favosBasisscholen !== null){
                         _favosBasisscholen = _.pull(_favosBasisscholen, schoolId);
                         localStorageService.set('basisscholenfavorites', _favosBasisscholen);
+                    }
+                }
+            },
+            addSecundaireschoolToFavorites:function(schoolId){
+                if(!this.isSecundaireschoolAlreadyFavorite(schoolId)){
+                    _favosSecundairescholen = localStorageService.get('secundairescholenfavorites');
+
+                    if(_favosSecundairescholen === null){
+                        _favosSecundairescholen = [];
+                    }
+
+                    _favosSecundairescholen.push(schoolId);
+                    localStorageService.set('secundairescholenfavorites', _favosBasisscholen);
+                }
+            },
+            removeSecundaireschoolFromFavorites:function(schoolId){
+                if(this.isSecundaireschoolAlreadyFavorite(schoolId)){
+                    _favosSecundairescholen = localStorageService.get('secundairescholenfavorites');
+
+                    if(_favosSecundairescholen !== null){
+                        _favosSecundairescholen = _.pull(_favosSecundairescholen, schoolId);
+                        localStorageService.set('secundairescholenfavorites', _favosBasisscholen);
                     }
                 }
             }
